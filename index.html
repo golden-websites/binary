@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>آموزش سیستم اعداد دودویی (باینری)</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#top">مبنای دو</a>
+  <nav aria-label="فهرست بخش‌ها">
+    <a href="#intro">معرفی</a><a href="#place">ارزش مکانی</a><a href="#b2d">باینری به ده‌دهی</a><a href="#d2b">ده‌دهی به باینری</a><a href="#game">بازی اعداد</a><a href="#tools">مبدل</a><a href="#quiz">آزمون</a><a href="#mistakes">اشتباهات</a>
+  </nav>
+  <button id="theme-toggle" type="button" class="btn ghost" aria-label="تغییر تم روشن و تاریک">تم</button>
+</header>
+
+<main id="top">
+<section class="hero">
+  <h1>سیستم اعداد دودویی را از پایه یاد بگیرید</h1>
+  <p>با توضیح گام‌به‌گام، مثال‌های حل‌شده و ابزارهای تعاملی، یاد بگیرید کامپیوتر چگونه عددها را با دو رقم <bdi class="bin">0</bdi> و <bdi class="bin">1</bdi> نشان می‌دهد.</p>
+  <a class="btn" href="#intro">شروع آموزش</a>
+</section>
+
+<section id="intro" class="card">
+  <h2>۱. معرفی سیستم اعداد</h2>
+  <p><strong>سیستم عددی</strong> روشی برای نوشتن مقدارهاست. <strong>مبنا</strong> تعداد رقم‌های مجاز و پایهٔ ارزش مکانی را مشخص می‌کند. در مبنای ۱۰ رقم‌های ۰ تا ۹ و در مبنای ۲ فقط ۰ و ۱ داریم.</p>
+  <p>انسان‌ها احتمالاً به‌دلیل شمردن با ده انگشت از مبنای ۱۰ استفاده می‌کنند. سخت‌افزار دیجیتال دو حالت را به‌سادگی و مطمئن تشخیص می‌دهد (مثلاً ولتاژ پایین و بالا)، پس نمایش دودویی برای آن مناسب است.</p>
+  <p><strong>بیت (Bit)</strong> کوچک‌ترین واحد اطلاعات است و مقدار ۰ یا ۱ دارد. <strong>بایت (Byte)</strong> معمولاً هشت بیت است و ۲۵۶ مقدار مختلف (۰ تا ۲۵۵) را نشان می‌دهد.</p>
+</section>
+
+<section id="place" class="card">
+  <h2>۲. ارزش مکانی بیت‌ها</h2>
+  <p>ارزش مکانی بیت‌ها از راست به چپ، با توان‌های ۲ افزایش می‌یابد. توان بیت سمت راست صفر است.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>توان</th><th>ارزش مکانی</th></tr></thead>
+    <tbody>
+      <tr><td>۲ به توان صفر</td><td><bdi class="bin">1</bdi></td></tr>
+      <tr><td>۲ به توان یک</td><td><bdi class="bin">2</bdi></td></tr>
+      <tr><td>۲ به توان دو</td><td><bdi class="bin">4</bdi></td></tr>
+      <tr><td>۲ به توان سه</td><td><bdi class="bin">8</bdi></td></tr>
+      <tr><td>۲ به توان چهار</td><td><bdi class="bin">16</bdi></td></tr>
+      <tr><td>۲ به توان پنج</td><td><bdi class="bin">32</bdi></td></tr>
+      <tr><td>۲ به توان شش</td><td><bdi class="bin">64</bdi></td></tr>
+      <tr><td>۲ به توان هفت</td><td><bdi class="bin">128</bdi></td></tr>
+    </tbody></table></div>
+  <p class="example"><bdi class="bin">1011<sub>2</sub> = 1×8 + 0×4 + 1×2 + 1×1 = 11<sub>10</sub></bdi></p>
+  <p>اندیس‌های ۲ و ۱۰ فقط مبنا را مشخص می‌کنند.</p>
+</section>
+
+<section id="b2d" class="card">
+  <h2>۳. تبدیل باینری به ده‌دهی</h2>
+  <p>ارزش مکانی هر بیت را بنویسید، بیت‌های ۱ را انتخاب کنید و ارزش‌هایشان را جمع کنید.</p>
+  <ul class="eqs">
+    <li><bdi class="bin">10<sub>2</sub>: 1×2 + 0×1 = 2<sub>10</sub></bdi></li>
+    <li><bdi class="bin">101<sub>2</sub>: 1×4 + 0×2 + 1×1 = 5<sub>10</sub></bdi></li>
+    <li><bdi class="bin">1011<sub>2</sub>: 8 + 0 + 2 + 1 = 11<sub>10</sub></bdi></li>
+    <li><bdi class="bin">1000<sub>2</sub>: 1×8 + 0 + 0 + 0 = 8<sub>10</sub></bdi></li>
+    <li><bdi class="bin">1001<sub>2</sub>: 8 + 0 + 0 + 1 = 9<sub>10</sub></bdi></li>
+    <li><bdi class="bin">11111111<sub>2</sub>: 128+64+32+16+8+4+2+1 = 255<sub>10</sub></bdi></li>
+  </ul>
+</section>
+
+<section id="d2b" class="card">
+  <h2>۴. تبدیل ده‌دهی به باینری</h2>
+  <p>عدد را پیاپی بر ۲ تقسیم کنید تا خارج‌قسمت صفر شود. سپس باقی‌مانده‌ها را <strong>از پایین به بالا</strong> بخوانید.</p>
+  <div class="grid2">
+    <div class="scroll"><table>
+      <caption><bdi class="bin">5<sub>10</sub> = 101<sub>2</sub></bdi></caption>
+      <thead><tr><th>تقسیم</th><th>خارج‌قسمت</th><th>باقی‌مانده</th></tr></thead>
+      <tbody><tr><td><bdi class="bin">5 ÷ 2</bdi></td><td>2</td><td>1</td></tr><tr><td><bdi class="bin">2 ÷ 2</bdi></td><td>1</td><td>0</td></tr><tr><td><bdi class="bin">1 ÷ 2</bdi></td><td>0</td><td>1</td></tr></tbody></table></div>
+    <div class="scroll"><table>
+      <caption><bdi class="bin">9<sub>10</sub> = 1001<sub>2</sub></bdi></caption>
+      <thead><tr><th>تقسیم</th><th>خارج‌قسمت</th><th>باقی‌مانده</th></tr></thead>
+      <tbody><tr><td><bdi class="bin">9 ÷ 2</bdi></td><td>4</td><td>1</td></tr><tr><td><bdi class="bin">4 ÷ 2</bdi></td><td>2</td><td>0</td></tr><tr><td><bdi class="bin">2 ÷ 2</bdi></td><td>1</td><td>0</td></tr><tr><td><bdi class="bin">1 ÷ 2</bdi></td><td>0</td><td>1</td></tr></tbody></table></div>
+  </div>
+  <p>نمونه‌های دیگر: <bdi class="bin">10<sub>10</sub> = 1010<sub>2</sub></bdi>، <bdi class="bin">13<sub>10</sub> = 1101<sub>2</sub></bdi>، <bdi class="bin">25<sub>10</sub> = 11001<sub>2</sub></bdi>.</p>
+  <h3>نمایش گام‌به‌گام</h3>
+  <div class="row">
+    <label for="step-input">عدد ده‌دهی</label>
+    <input id="step-input" type="text" inputmode="numeric" value="25" autocomplete="off">
+    <button id="step-start" type="button" class="btn">شروع</button>
+    <button id="step-next" type="button" class="btn" disabled>مرحله بعد</button>
+  </div>
+  <p id="step-msg" class="msg" role="status"></p>
+  <div class="scroll"><table id="step-table" hidden>
+    <thead><tr><th>تقسیم</th><th>خارج‌قسمت</th><th>باقی‌مانده</th></tr></thead><tbody></tbody></table></div>
+  <p id="step-result" class="result" hidden></p>
+</section>
+
+<section class="card">
+  <h2>۵. کاربردهای سیستم باینری</h2>
+  <p>پردازنده‌ها و مدارهای دیجیتال، ذخیره‌سازی و انتقال داده، نمایش اطلاعات در حافظه، منطق دیجیتال و برنامه‌نویسی همگی از نمایش دودویی استفاده می‌کنند.</p>
+  <p>استفاده از باینری به داشتن دو حالت قابل‌تشخیص در سخت‌افزار مربوط است. اما کامپیوتر فقط صفر و یک ساده نیست: دنباله‌ای از بیت‌ها بسته به قرارداد می‌تواند عدد، متن، رنگ، تصویر یا دستور باشد.</p>
+</section>
+
+<section id="game" class="card">
+  <h2>بازی اعداد دودویی</h2>
+  <p>این هشت اسکرین‌شات از یک بازی فضایی، عددهای دودویی <bdi class="bin">1000</bdi> تا <bdi class="bin">1111</bdi> را نشان می‌دهند. این‌ها اعداد باینری ۴ بیتی هستند، نه «هزار» و «هزار و یک».</p>
+  <div class="gallery">
+    <figure><img src="assets/images/binary-game-1000.jpg" width="720" height="1600" loading="lazy" alt="اسکرین‌شات بازی با عدد دودویی 1000"><figcaption><bdi class="bin">1000<sub>2</sub> = 8<sub>10</sub></bdi></figcaption></figure>
+    <figure><img src="assets/images/binary-game-1001.jpg" width="720" height="1600" loading="lazy" alt="اسکرین‌شات بازی با عدد دودویی 1001"><figcaption><bdi class="bin">1001<sub>2</sub> = 9<sub>10</sub></bdi></figcaption></figure>
+    <figure><img src="assets/images/binary-game-1010.jpg" width="720" height="1600" loading="lazy" alt="اسکرین‌شات بازی با عدد دودویی 1010"><figcaption><bdi class="bin">1010<sub>2</sub> = 10<sub>10</sub></bdi></figcaption></figure>
+    <figure><img src="assets/images/binary-game-1011.jpg" width="720" height="1600" loading="lazy" alt="اسکرین‌شات بازی با عدد دودویی 1011"><figcaption><bdi class="bin">1011<sub>2</sub> = 11<sub>10</sub></bdi></figcaption></figure>
+    <figure><img src="assets/images/binary-game-1100.jpg" width="720" height="1600" loading="lazy" alt="اسکرین‌شات بازی با عدد دودویی 1100"><figcaption><bdi class="bin">1100<sub>2</sub> = 12<sub>10</sub></bdi></figcaption></figure>
+    <figure><img src="assets/images/binary-game-1101.jpg" width="720" height="1600" loading="lazy" alt="اسکرین‌شات بازی با عدد دودویی 1101"><figcaption><bdi class="bin">1101<sub>2</sub> = 13<sub>10</sub></bdi></figcaption></figure>
+    <figure><img src="assets/images/binary-game-1110.jpg" width="720" height="1600" loading="lazy" alt="اسکرین‌شات بازی با عدد دودویی 1110"><figcaption><bdi class="bin">1110<sub>2</sub> = 14<sub>10</sub></bdi></figcaption></figure>
+    <figure><img src="assets/images/binary-game-1111.jpg" width="720" height="1600" loading="lazy" alt="اسکرین‌شات بازی با عدد دودویی 1111"><figcaption><bdi class="bin">1111<sub>2</sub> = 15<sub>10</sub></bdi></figcaption></figure>
+  </div>
+  <div class="scroll"><table>
+    <thead><tr><th>مبنای ۲</th><th>محاسبه</th><th>مبنای ۱۰</th></tr></thead>
+    <tbody>
+      <tr><td><bdi class="bin">1000</bdi></td><td><bdi class="bin">8+0+0+0</bdi></td><td>8</td></tr>
+      <tr><td><bdi class="bin">1001</bdi></td><td><bdi class="bin">8+0+0+1</bdi></td><td>9</td></tr>
+      <tr><td><bdi class="bin">1010</bdi></td><td><bdi class="bin">8+0+2+0</bdi></td><td>10</td></tr>
+      <tr><td><bdi class="bin">1011</bdi></td><td><bdi class="bin">8+0+2+1</bdi></td><td>11</td></tr>
+      <tr><td><bdi class="bin">1100</bdi></td><td><bdi class="bin">8+4+0+0</bdi></td><td>12</td></tr>
+      <tr><td><bdi class="bin">1101</bdi></td><td><bdi class="bin">8+4+0+1</bdi></td><td>13</td></tr>
+      <tr><td><bdi class="bin">1110</bdi></td><td><bdi class="bin">8+4+2+0</bdi></td><td>14</td></tr>
+      <tr><td><bdi class="bin">1111</bdi></td><td><bdi class="bin">8+4+2+1</bdi></td><td>15</td></tr>
+    </tbody></table></div>
+  <p>با تغییر بیت سمت راست از ۰ به ۱، مقدار یک واحد بیشتر می‌شود: <bdi class="bin">1000 → 1001</bdi> یعنی ۸ به ۹. همین بیت در همهٔ جفت‌های بالا (۱۰ به ۱۱، ۱۲ به ۱۳ و ۱۴ به ۱۵) هم یک واحد اضافه می‌کند.</p>
+</section>
+
+<section id="tools" class="card">
+  <h2>مبدل آنلاین مبنای ۲ و ۱۰</h2>
+  <div class="grid2">
+    <div class="tool">
+      <h3>باینری به ده‌دهی</h3>
+      <label for="b2d-input">عدد دودویی (حداکثر ۶۴ بیت)</label>
+      <input id="b2d-input" type="text" inputmode="numeric" dir="ltr" placeholder="101101" autocomplete="off">
+      <div class="row"><button id="b2d-clear" type="button" class="btn ghost">پاک کردن</button><button id="b2d-copy" type="button" class="btn" disabled>کپی نتیجه</button></div>
+      <p id="b2d-msg" class="msg" role="alert"></p>
+      <p id="b2d-result" class="result" dir="ltr"></p>
+      <div class="scroll"><table id="b2d-table" hidden><thead><tr><th>بیت</th><th>توان</th><th>ارزش</th><th>سهم</th></tr></thead><tbody></tbody></table></div>
+      <p id="b2d-formula" class="example" dir="ltr"></p>
+    </div>
+    <div class="tool">
+      <h3>ده‌دهی به باینری</h3>
+      <label for="d2b-input">عدد صحیح نامنفی (حداکثر ۱۸ رقم)</label>
+      <input id="d2b-input" type="text" inputmode="numeric" dir="ltr" placeholder="45" autocomplete="off">
+      <div class="row"><button id="d2b-clear" type="button" class="btn ghost">پاک کردن</button><button id="d2b-copy" type="button" class="btn" disabled>کپی نتیجه</button></div>
+      <p id="d2b-msg" class="msg" role="alert"></p>
+      <p id="d2b-result" class="result" dir="ltr"></p>
+      <div class="scroll"><table id="d2b-table" hidden><thead><tr><th>تقسیم</th><th>خارج‌قسمت</th><th>باقی‌مانده</th></tr></thead><tbody></tbody></table></div>
+    </div>
+  </div>
+
+  <h3>نمایش ارزش بیت‌ها</h3>
+  <p>عدد دودویی را بنویسید یا روی هر بیت کلیک کنید.</p>
+  <div class="row">
+    <label for="viz-input">عدد دودویی (تا ۱۶ بیت)</label>
+    <input id="viz-input" type="text" inputmode="numeric" dir="ltr" value="1011" autocomplete="off">
+  </div>
+  <p id="viz-msg" class="msg" role="alert"></p>
+  <div id="viz-bits" class="bits" dir="ltr"></div>
+  <p id="viz-total" class="result" dir="ltr"></p>
+</section>
+
+<section id="quiz" class="card">
+  <h2>تمرین و آزمون</h2>
+  <p class="row"><span>امتیاز: <strong id="quiz-score">0</strong></span><span>پاسخ درست: <strong id="quiz-correct">0</strong> از <strong id="quiz-total">0</strong></span></p>
+  <p id="quiz-question" class="qtext"></p>
+  <div id="quiz-options" class="options"></div>
+  <p id="quiz-feedback" class="msg" role="status"></p>
+  <div class="row"><button id="quiz-next" type="button" class="btn" disabled>سؤال بعدی</button><button id="quiz-restart" type="button" class="btn ghost">شروع مجدد</button></div>
+</section>
+
+<section id="mistakes" class="card">
+  <h2>۶. اشتباهات رایج</h2>
+  <ul class="eqs">
+    <li><strong>خواندن از جهت اشتباه:</strong> نادرست: <bdi class="bin">1011 = 1×1+0×2+1×4+1×8 = 13</bdi>. درست: بیت راست ارزش ۱ دارد، پس <bdi class="bin">1011 = 8+2+1 = 11</bdi>.</li>
+    <li><strong>جمع همهٔ بیت‌ها:</strong> نادرست: <bdi class="bin">1011 = 1+0+1+1 = 3</bdi>. درست: هر بیت ۱ باید در ارزش مکانی‌اش ضرب شود: ۱۱.</li>
+    <li><strong>شروع توان از ۱:</strong> نادرست: <bdi class="bin">101 = 1×2<sup>3</sup> + 0×2<sup>2</sup> + 1×2<sup>1</sup> = 10</bdi> (توان‌ها یکی بالاتر گرفته شده). درست: بیت راست <bdi class="bin">2<sup>0</sup> = 1</bdi> است، پس <bdi class="bin">101 = 4+0+1 = 5</bdi>.</li>
+    <li><strong>اشتباه گرفتن دو روش:</strong> برای باینری به ده‌دهی جمع ارزش‌های مکانی لازم است. برای ده‌دهی به باینری تقسیم بر ۲ و خواندن باقی‌مانده‌ها از پایین به بالا. نادرست: <bdi class="bin">10 ÷ 2 = 5</bdi> و نتیجه «۵». درست: باقی‌مانده‌ها <bdi class="bin">0,1,0,1</bdi> از پایین به بالا: <bdi class="bin">1010</bdi>.</li>
+    <li><strong>اثر صفرهای سمت چپ:</strong> نادرست: <bdi class="bin">0101</bdi> با <bdi class="bin">101</bdi> فرق دارد. درست: هر دو برابر ۵ هستند، چون صفر سمت چپ چیزی اضافه نمی‌کند.</li>
+  </ul>
+</section>
+</main>
+
+<footer class="foot"><a href = "https://me.hadimostafayi.ir"> درباره من</a></footer>
+<script src="js/converter.js"></script>
+<script src="js/bit-visualizer.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>
